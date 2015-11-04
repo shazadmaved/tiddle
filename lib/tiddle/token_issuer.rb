@@ -50,7 +50,7 @@ module Tiddle
       attr_accessor :maximum_tokens_per_user
 
       def authentication_token_class(resource)
-        resource.association(:authentication_tokens).klass
+        resource.authentication_tokens.klass
       end
   end
 end
