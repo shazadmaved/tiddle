@@ -10,7 +10,7 @@ module Devise
         env["devise.skip_trackable"] = true
 
         resource = mapping.to.find_for_authentication(email: email_from_headers)
-        return fail(:invalid_token) unless resource
+       # return fail(:invalid_token) unless resource
 
         token = Tiddle::TokenIssuer.build.find_token(resource, token_from_headers)
         if token
@@ -18,7 +18,7 @@ module Devise
           return success!(resource)
         end
 
-        fail(:invalid_token)
+       # fail(:invalid_token)
       end
 
       def valid?
