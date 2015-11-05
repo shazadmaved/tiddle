@@ -12,11 +12,6 @@ module Devise
         resource = mapping.to.find_for_authentication(email: email_from_headers)
         return fail(:invalid_token) unless resource
 
-        puts "mam"
-        puts resource.inspect
-        puts "mam"
-
-
         token = Tiddle::TokenIssuer.build.find_token(resource, token_from_headers)
         if token
           touch_token(token)
