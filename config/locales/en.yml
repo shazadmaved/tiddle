@@ -2,3 +2,4 @@ en:
   devise:
     failure:
       invalid_token: "Invalid email or token"
+      invalid_token1: "Invalid email1 or token1"
