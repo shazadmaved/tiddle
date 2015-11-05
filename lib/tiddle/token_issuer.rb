@@ -38,8 +38,9 @@ module Tiddle
       puts token.inspect
     puts token.body
     puts token_body
+    puts token_from_headers
       puts "mam"
-        Devise.secure_compare(token.body, token_body)
+        Devise.secure_compare(token.body, token_from_headers)
       end
     end
 
