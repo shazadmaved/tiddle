@@ -18,7 +18,7 @@ module Devise
           return success!(resource)
         end
 
-       # fail(:invalid_token)
+        fail(:invalid_token)
       end
 
       def valid?
