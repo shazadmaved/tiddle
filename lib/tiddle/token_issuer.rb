@@ -36,7 +36,8 @@ module Tiddle
       resource.authentication_tokens.detect do |token|
       puts "mam"
       puts token.inspect
-    
+    puts token.body
+    puts token_body
       puts "mam"
         Devise.secure_compare(token.body, token_body)
       end
