@@ -10,8 +10,8 @@ module Devise
         env["devise.skip_trackable"] = true
 
         resource = mapping.to.find_for_authentication(email: email_from_headers)
-        return fail(:invalid_token1) unless resource
-
+        return fail(:invalid_token) unless resource
+        puts resource
         token = Tiddle::TokenIssuer.build.find_token(resource, token_from_headers)
         if token
           touch_token(token)
