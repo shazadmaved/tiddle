@@ -34,13 +34,7 @@ module Tiddle
       token_class = authentication_token_class(resource)
       token_body = Devise.token_generator.digest(token_class, :body, token_from_headers)
       resource.authentication_tokens.detect do |token|
-      puts "mam"
-      puts token.inspect
-    puts token.body
-    puts token_body
-    puts token_from_headers
-      puts "mam"
-        Devise.secure_compare(token.body, token_from_headers)
+        Devise.secure_compare(token.body, token_body)
       end
     end
 
